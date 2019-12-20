@@ -2377,10 +2377,8 @@ public class CppGenerator implements CodeGenerator
         new Formatter(sb).format("\n" +
             indent + "template<typename CharT, typename Traits>\n" +
             indent + "friend std::basic_ostream<CharT, Traits>& operator<<(\n" +
-            indent + "    std::basic_ostream<CharT, Traits>& builder, %1$s _writer)\n" +
+            indent + "    std::basic_ostream<CharT, Traits>& builder, %1$s writer)\n" +
             indent + "{\n" +
-            indent + "    %1$s writer(_writer.m_buffer, _writer.m_offset,\n" +
-            indent + "        _writer.m_bufferLength, _writer.sbeBlockLength(), _writer.m_actingVersion);\n" +
             indent + "    builder << '{';\n" +
             indent + "    builder << R\"(\"Name\": \"%1$s\", )\";\n" +
             indent + "    builder << R\"(\"sbeTemplateId\": )\";\n" +
